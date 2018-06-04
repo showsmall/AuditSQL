@@ -83,6 +83,7 @@ class IncepHostConfigView(View):
                                                                 ).filter(config__is_enable=0). \
                 filter(group__group_id__in=user_in_group). \
                 values('comment').annotate(Count('id'))
+            print(result)
 
         return JsonResponse(list(result), safe=False)
 
